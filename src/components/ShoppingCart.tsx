@@ -4,10 +4,6 @@ import { db, auth } from '../config/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { IProduct } from './Products';
 
-// interface ProductProps {
-// 	product: IProduct | null;
-// }
-
 export function ShoppingCart() {
 	const [user] = useAuthState(auth);
 	const [showCartItems, setShowCartItems] = React.useState(false);
@@ -54,7 +50,6 @@ export function ShoppingCart() {
 	// 			where('productId', '==', product?.id),
 	// 			where('userId', '==', user.uid)
 	// 		);
-
 	// 		const productToDeleteData = await getDocs(productToDeleteQuery);
 	// 		const productId = productToDeleteData.docs[0].id;
 	// 		const productToDelete = doc(db, 'cart', productId);
@@ -134,11 +129,10 @@ export function ShoppingCart() {
 								</button>
 								<button
 									className="px-3 mx-1 text-lg rounded-xl bg-red-500 "
-                  // onClick={() => deleteItemFromCart(product.id)}
-                  >
-                  X
-                  </button>
-
+									// onClick={() => deleteItemFromCart(product.id)}
+								>
+									X
+								</button>
 							</div>
 						</div>
 					))
